@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>ExtTools.ExtTools</id>
+    <name>ExtTools</name>
+    <vendor email="john1364dev@gmail.com" url="https://github.com/john1364">John1364</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="ExtTools.rootGroup" text="ExtTools" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+
+            <group id="ExtTools.rootGroup.OpenFolder" text="Open folder" popup="true">
+                <add-to-group group-id="ExtTools.rootGroup" anchor="first"/>
+                <!--relative-to-action="EditorPasteSimple"/>-->
+
+                <action class="OpenFolder.OpenFolderProject" id="ExtToolsOFP" text="Open folder project"/>
+                <action class="OpenFolder.OpenResources" id="ExtToolsOFD" text="Open folder resources"/>
+            </group>
+
+        </group>
+    </actions>
+</idea-plugin>
